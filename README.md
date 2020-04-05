@@ -13,18 +13,18 @@ The branching step adds every amino acid to a peptide.(function starts with an e
 Bounding step trims the outcome of the branching step with respect to N.
 """""""
 
-    TEH PSEUDOCODE OF THE FOLLOWING FUNCTION
-LeaderboardCyclopeptideSequencing(Spectrum, N)
-        Leaderboard ← set containing only the empty peptide
-        LeaderPeptide ← empty peptide
-        while Leaderboard is non-empty
-            Leaderboard ← Expand(Leaderboard)(with every aa)
-                for each Peptide in Leaderboard
-                    if Mass(Peptide) = ParentMass(Spectrum)
-                        if Score(Peptide, Spectrum) > Score(LeaderPeptide, Spectrum)
-                            LeaderPeptide ← Peptide
-                    else if Mass(Peptide) < ParentMass(Spectrum)
-                        add Peptide to Candidate peptides
-            Leaderboard ← Trim(Candidate peptides, Spectrum, N)
-        output LeaderPeptide
+    THE PSEUDOCODE OF THE LEADERBOARD CYCLOPEPTIDE SEQUENCING
+    LeaderboardCyclopeptideSequencing(Spectrum, N)
+            Leaderboard ← set containing only the empty peptide
+            LeaderPeptide ← empty peptide
+            while Leaderboard is non-empty
+                Leaderboard ← Expand(Leaderboard)(with every aa)
+                    for each Peptide in Leaderboard
+                        if Mass(Peptide) = ParentMass(Spectrum)
+                            if Score(Peptide, Spectrum) > Score(LeaderPeptide, Spectrum)
+                                LeaderPeptide ← Peptide
+                        else if Mass(Peptide) < ParentMass(Spectrum)
+                            add Peptide to Candidate peptides
+                Leaderboard ← Trim(Candidate peptides, Spectrum, N)
+            output LeaderPeptide
 
