@@ -1,3 +1,7 @@
+#doesn't gives the correct results with every input of N,M and spectrum.
+#More likely to give accurate results at the higher levels of N
+
+
 from operator import itemgetter
 from itertools import product
 import timeit
